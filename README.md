@@ -1,55 +1,94 @@
 # Invoice & Billing System
 
-## Pages & Features
+Create, send, and track invoices with payment management.
 
-### 1. Dashboard
-- Outstanding receivables summary
-- Monthly revenue chart
-- Overdue invoices count & value
-- Recent payment activity
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Invoices
-- Create new invoice with line items, tax, discounts
-- Invoice templates (customizable logo, colors, layout)
-- Invoice list with status filters (draft, sent, paid, overdue)
-- Duplicate, void, or credit note from existing invoice
-- Send invoice via email with PDF attachment
-- Recurring invoice scheduling
+## Tech Stack
 
-### 3. Estimates / Quotes
-- Create estimates with line items
-- Convert approved estimate to invoice
-- Estimate status tracking (draft → sent → accepted → rejected)
-- Client e-signature acceptance
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Payments
-- Record full or partial payments
-- Multiple payment methods (bank, card, cash, crypto)
-- Payment receipt generation
-- Auto-match payments to invoices
+## Getting Started
 
-### 5. Clients
-- Client directory with contact & billing info
-- Client detail page: invoices, payments, balance
-- Client statement generation
-- Tax ID / VAT number storage
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Expenses
-- Log business expenses with categories
-- Attach receipts (image upload)
-- Mark expenses as billable to client
-- Expense summary by category & period
+## License
 
-### 7. Reports
-- Profit & loss summary
-- Accounts receivable aging
-- Tax summary report
-- Revenue by client, service, period
-- Export as PDF / CSV
+MIT © Mehdi Nabhani
 
-### 8. Settings
-- Business profile (name, address, logo, tax IDs)
-- Tax rate configuration
-- Payment terms defaults
-- Currency & number formats
-- Email notification templates
+---
+
+<details>
+<summary>📋 Original Feature Spec</summary>
+
+# {{APP_TITLE}}
+
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
